@@ -1,0 +1,41 @@
+/* Common cursor style */
+.cursor {
+    display: inline-block;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 5;
+  }
+  
+  /* Animation for first h1 */
+  .typewriter-1 {
+    animation:
+      typewriter-1 4s steps(40) 0.5s 1 normal both,
+      blinkingCursor 500ms steps(40) infinite normal;
+  }
+  
+  .typewriter-2 {
+    visibility: hidden;
+    animation:
+      typewriter-2 4s steps(50) 0s 1 normal both,
+      blinkingCursor 500ms steps(50) infinite normal;
+  }
+  
+  
+  @keyframes typewriter-1 {
+    from { width: 0; }
+    to { width: 93%; }
+  }
+  
+  @keyframes typewriter-2 {
+    from { width: 0; }
+    to { width: 70%; }
+  }
+  
+  @keyframes blinkingCursor {
+    from { border-right-color: rgba(255,255,255,.75); }
+    to { border-right-color: transparent; }
+  }
+  
+
