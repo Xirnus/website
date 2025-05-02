@@ -7,6 +7,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel ="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </head>
 <body class="bg-gray-900 text-white font-[Nunito] text-weight-normal bg-[url('imgs/flower_background.png')] bg-cover bg-center bg-fixed">
         <!-- Navbar with solid background -->
@@ -23,107 +28,108 @@
         </div>
           
 
-    <div class="container mx-auto p-4 pt-20">
+    <div class="container mx-auto pt-20">
         <div class="flex items-center">
-            <div class="flex-1 ml-24"> <!-- Added ml-8 to move text to the right -->
+            <div class="flex-1 ml-20"> <!-- Added ml-8 to move text to the right -->
             </div>
         </div>
     </div>
-<!-- Image Slider Box with Captions and Links -->
-<div class="flex justify-center mt-10">
-    <div class="relative w-[90%] max-w-3xl bg-gray-800 p-6 rounded-xl shadow-lg text-center">
-      <!-- Slider Images -->
-      <div class="overflow-hidden relative">
-        <div id="slider" class="flex transition-transform duration-500 ease-in-out">
-          <div class="flex-shrink-0 w-full">
-            <img src="imgs/journey/1stResume.png" class="max-h-[500px] mx-auto rounded-lg object-contain" alt="1st Resume">
-            <p class="text-lg font-semibold mt-2">1st Resume</p>
-          </div>
-          <div class="flex-shrink-0 w-full">
-            <img src="imgs/journey/1stResume2.png" class="max-h-[500px] mx-auto rounded-lg object-contain" alt="1st Resume 2">
-            <p class="text-lg font-semibold mt-2">1st Resume 2</p>
-          </div>
-          <div class="flex-shrink-0 w-full">
-            <a href="https://xirnus.github.io/PortpolioWebsiteSchoolProject/index.html" target="_blank">
-              <img src="imgs/journey/2ndResume.png" class="max-h-[500px] mx-auto rounded-lg object-contain" alt="2nd Resume">
-            </a>
-            <p class="text-lg font-semibold mt-2">2nd Resume</p>
-          </div>
-          <div class="flex-shrink-0 w-full">
-            <img src="imgs/journey/1stPHPWebsite.png" class="max-h-[500px] mx-auto rounded-lg object-contain" alt="PHP Website">
-            <p class="text-lg font-semibold mt-2">Game Calendar, Made Using PHP, HTML, CSS and Bootstrap</p>
-          </div>
-          <div class="flex-shrink-0 w-full">
-            <a href="https://xirnus.github.io/HCI-Website/" target="_blank">
-              <img src="imgs/journey/1stJavaScriptWebsite.png" class="max-h-[500px] mx-auto rounded-lg object-contain" alt="1st JavaScript Website">
-            </a>
-            <p class="text-lg font-semibold mt-2">1st JavaScript Website</p>
-          </div>
-          <div class="flex-shrink-0 w-full">
-            <a href="https://xirnus.github.io/HCI-POEM/" target="_blank">
-              <img src="imgs/journey/2ndJavaScriptWebsite.png" class="max-h-[500px] mx-auto rounded-lg object-contain" alt="Poem Website">
-            </a>
-            <p class="text-lg font-semibold mt-2">Poem Website, 2nd JavaScript Website</p>
-          </div>
-          <div class="flex-shrink-0 w-full">
-            <img src="imgs/journey/worldPopulationChart.png" class="max-h-[500px] mx-auto rounded-lg object-contain" alt="Population Chart">
-            <p class="text-lg font-semibold mt-2">A World Population Chart Created Using Python</p>
-          </div>
-          <div class="flex-shrink-0 w-full">
-            <a href="https://xirnus.github.io/HCI-JavaScriptBalls/" target="_blank">
-              <img src="imgs/journey/3rdJavaScriptWebsite.png" class="max-h-[500px] mx-auto rounded-lg object-contain" alt="3rd JS Site">
-            </a>
-            <p class="text-lg font-semibold mt-2">Background Changer Website Using Bouncing Balls (JavaScript)</p>
-          </div>
-          <div class="flex-shrink-0 w-full">
-            <a href="https://xirnus.github.io/HCI-JavaScriptBalls/VERCELES_BALLS" target="_blank">
-              <img src="imgs/journey/4thJavaScriptWebsite.png" class="max-h-[500px] mx-auto rounded-lg object-contain" alt="4th JS Site">
-            </a>
-            <p class="text-lg font-semibold mt-2">Balls Bouncing on Walls – JavaScript</p>
-          </div>
-          <div class="flex-shrink-0 w-full">
-            <img src="imgs/journey/2ndMacro.png" class="max-h-[500px] mx-auto rounded-lg object-contain" alt="2nd Macro">
-            <p class="text-lg font-semibold mt-2">My First Macro Used In A Roblox Game Created Using Python</p>
-          </div>
-          <div class="flex-shrink-0 w-full">
-            <img src="imgs/journey/1stMacro.png" class="max-h-[500px] mx-auto rounded-lg object-contain" alt="1st Macro">
-            <p class="text-lg font-semibold mt-2">My Second Macro Used In A Roblox Game Created Using Python</p>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Navigation Buttons -->
-      <div class="flex justify-between mt-6">
-        <button onclick="prevSlide()" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg">Previous</button>
-        <button onclick="nextSlide()" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg">Next</button>
-      </div>
+<!-- Swiper Slider -->
+<div class="flex justify-center">
+  <div class="relative w-[90%] max-w-6xl bg-gray-800 p-6 rounded-xl shadow-lg text-center">
+    <!-- Swiper -->
+<!-- Swiper Container -->
+<div class="swiper mySwiper relative pb-12">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide text-center">
+      <img src="imgs/journey/1stResume.png" class="max-h-[500px] mx-auto rounded-lg object-contain transition duration-300 hover:shadow-xl" alt="1st Resume">
+      <p class="text-lg font-semibold mt-4">Personal Resume V1 – Built with HTML & CSS.</p>
+    </div>
+    <div class="swiper-slide text-center">
+      <img src="imgs/journey/1stResume2.png" class="max-h-[500px] mx-auto rounded-lg object-contain transition duration-300 hover:shadow-xl" alt="1st Resume 2">
+      <p class="text-lg font-semibold mt-4">Personal Resume V1 – Built with HTML & CSS.</p>
+    </div>
+    <div class="swiper-slide text-center">
+      <a href="https://xirnus.github.io/PortpolioWebsiteSchoolProject/index.html" target="_blank">
+        <img src="imgs/journey/2ndResume.png" class="max-h-[500px] mx-auto rounded-lg object-contain transition duration-300 hover:shadow-xl" alt="2nd Resume">
+      </a>
+      <p class="text-lg font-semibold mt-4">Personal Resume V2 – Built with HTML & CSS.</p>
+    </div>
+    <div class="swiper-slide text-center">
+      <img src="imgs/journey/1stPHPWebsite.png" class="max-h-[500px] mx-auto rounded-lg object-contain transition duration-300 hover:shadow-xl" alt="PHP Website">
+      <p class="text-lg font-semibold mt-4">Game Calendar, Made Using PHP, HTML, CSS and Bootstrap</p>
+    </div>
+    <div class="swiper-slide text-center">
+      <a href="https://xirnus.github.io/HCI-Website/" target="_blank">
+        <img src="imgs/journey/1stJavaScriptWebsite.png" class="max-h-[500px] mx-auto rounded-lg object-contain transition duration-300 hover:shadow-xl" alt="1st JavaScript Website">
+      </a>
+      <p class="text-lg font-semibold mt-4">1st JavaScript Website</p>
+    </div>
+    <div class="swiper-slide text-center">
+      <a href="https://xirnus.github.io/HCI-POEM/" target="_blank">
+        <img src="imgs/journey/2ndJavaScriptWebsite.png" class="max-h-[500px] mx-auto rounded-lg object-contain transition duration-300 hover:shadow-xl" alt="Poem Website">
+      </a>
+      <p class="text-lg font-semibold mt-4">Poem Website, 2nd JavaScript Website</p>
+    </div>
+    <div class="swiper-slide text-center">
+      <img src="imgs/journey/worldPopulationChart.png" class="max-h-[500px] mx-auto rounded-lg object-contain transition duration-300 hover:shadow-xl" alt="Population Chart">
+      <p class="text-lg font-semibold mt-4">A World Population Chart Created Using Python</p>
+    </div>
+    <div class="swiper-slide text-center">
+      <a href="https://xirnus.github.io/HCI-JavaScriptBalls/" target="_blank">
+        <img src="imgs/journey/3rdJavaScriptWebsite.png" class="max-h-[500px] mx-auto rounded-lg object-contain transition duration-300 hover:shadow-xl" alt="3rd JS Site">
+      </a>
+      <p class="text-lg font-semibold mt-4">Background Changer Website Using Bouncing Balls (JavaScript)</p>
+    </div>
+    <div class="swiper-slide text-center">
+      <a href="https://xirnus.github.io/HCI-JavaScriptBalls/VERCELES_BALLS" target="_blank">
+        <img src="imgs/journey/4thJavaScriptWebsite.png" class="max-h-[500px] mx-auto rounded-lg object-contain transition duration-300 hover:shadow-xl" alt="4th JS Site">
+      </a>
+      <p class="text-lg font-semibold mt-4">Balls Bouncing on Walls – JavaScript</p>
+    </div>
+    <div class="swiper-slide text-center">
+      <img src="imgs/journey/1stMacro.png" class="max-h-[500px] mx-auto rounded-lg object-contain transition duration-300 hover:shadow-xl" alt="1st Macro">
+      <p class="text-lg font-semibold mt-4">My First Macro Used In A Roblox Game Created Using Python</p>
+    </div>
+    <div class="swiper-slide text-center">
+      <img src="imgs/journey/2ndMacro.png" class="max-h-[500px] mx-auto rounded-lg object-contain transition duration-300 hover:shadow-xl" alt="2nd Macro">
+      <p class="text-lg font-semibold mt-4">My Second Macro Used In A Roblox Game Created Using Python</p>
     </div>
   </div>
+
+  <!-- Pagination -->
+  <div class="swiper-pagination absolute bottom-0 left-0 w-full z-10"></div>
+</div>
+
+      
   
-  <!-- Slider Script -->
-  <script>
-    let slider = document.getElementById("slider");
-    let currentIndex = 0;
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</div>
   
-    function updateSlider() {
-      const width = slider.clientWidth;
-      slider.style.transform = `translateX(-${width * currentIndex}px)`;
-    }
-  
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % slider.children.length;
-      updateSlider();
-    }
-  
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + slider.children.length) % slider.children.length;
-      updateSlider();
-    }
-  
-    window.addEventListener("resize", updateSlider);
-    window.addEventListener("load", updateSlider);
-  </script>
-  
+<script>
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+  });
+</script>
+
       
       
     
