@@ -31,7 +31,7 @@
   /* Default animation for typewriter-2 */
   @keyframes typewriter-2 {
       from { width: 0; }
-      to { width: 70%; }
+      to { width: 75%; }
   }
   
   /* Override for smaller screens */
@@ -48,3 +48,10 @@
   }
   
 
+  @media (max-width: 768px) {
+    .swiper-pagination {
+        position: static; 
+        margin-top: 10px; 
+        text-align: center;
+    }
+}
