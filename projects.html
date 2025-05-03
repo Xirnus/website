@@ -12,6 +12,17 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+
+    <style>
+      /* Adjust Swiper pagination for smaller screens */
+      @media (max-width: 768px) {
+          .swiper-pagination {
+              position: static; /* Move pagination to a static position */
+              margin-top: 10px; /* Add spacing above pagination */
+              text-align: center; /* Center align pagination dots */
+          }
+      }
+  </style>
 </head>
 <body class="bg-gray-900 text-white font-[Nunito] text-weight-normal bg-[url('imgs/flower_background.png')] bg-cover bg-center bg-fixed">
     <!-- Navbar with solid background -->
@@ -23,9 +34,9 @@
           <!-- Navigation Links -->
           <ul id="navbarMenu" class="hidden flex-col md:flex md:flex-row md:space-x-8 space-y-4 md:space-y-0 bg-gray-800 md:bg-transparent p-5 md:p-0 absolute md:static top-16 left-0 w-full md:w-auto z-10">
               <li><a href="index.html" class="text-2xl md:text-3xl font-bold text-white hover:text-gray-400 border-2 border-gray-900 rounded-xl p-2 bg-gray-900">Home</a></li>
-              <li><a href="#" class="text-2xl md:text-3xl font-bold text-white hover:text-gray-400 border-2 border-gray-900 rounded-xl p-2 bg-gray-900">Projects</a></li>
+              <li><a href="#" class="text-yellow-400 text-2xl md:text-3xl font-bold text-white hover:text-gray-400 border-2 border-gray-900 rounded-xl p-2 bg-gray-900">Projects</a></li>
               <li><a href="contacts.html" class="text-2xl md:text-3xl font-bold text-white hover:text-gray-400 border-2 border-gray-900 rounded-xl p-2 bg-gray-900">Contacts</a></li>
-              <li><a href="about.html" class="text-yellow-400 text-2xl md:text-3xl font-bold text-white hover:text-gray-400 border-2 border-gray-900 rounded-xl p-2 bg-gray-900">About</a></li>
+              <li><a href="about.html" class="text-2xl md:text-3xl font-bold text-white hover:text-gray-400 border-2 border-gray-900 rounded-xl p-2 bg-gray-900">About</a></li>
           </ul>
           
           <!-- Right side: Portfolio link (Visible on medium screens and above) -->
@@ -41,7 +52,7 @@
   </script>
           
 
-  <div class="container mx-auto pt-20">
+  <div class="container mx-auto pt-4">
       <div class="flex items-center">
           <div class="flex-1 ml-20"> <!-- Added ml-8 to move text to the right -->
           </div>
@@ -122,26 +133,27 @@
   </div>
 </div>
   
-<script>
-  const swiper = new Swiper('.swiper', {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 20,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-    },
-  });
-</script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true, /* Optional: Use dynamic bullets for better UX */
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+        });
+    </script>
 
       
       

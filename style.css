@@ -7,7 +7,7 @@
     overflow: hidden;
     z-index: 5;
   }
-  
+
   /* Animation for first h1 */
   .typewriter-1 {
     animation:
@@ -28,9 +28,18 @@
     to { width: 93%; }
   }
   
+  /* Default animation for typewriter-2 */
   @keyframes typewriter-2 {
-    from { width: 0; }
-    to { width: 70%; }
+      from { width: 0; }
+      to { width: 70%; }
+  }
+  
+  /* Override for smaller screens */
+  @media (max-width: 768px) {
+      @keyframes typewriter-2 {
+          from { width: 0; }
+          to { width: 92%; }
+      }
   }
   
   @keyframes blinkingCursor {

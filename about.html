@@ -11,7 +11,7 @@
 </head>
 <body class="bg-gray-900 text-white font-[Nunito] text-weight-normal bg-[url('imgs/flower_background.png')] bg-cover bg-center bg-fixed">
     <!-- Navbar with solid background -->
-    <div class="bg-gray-800 border-b border-white">
+    <div id="navbar" class="bg-gray-800 border-b border-white">
         <nav class="w-full p-7 flex items-center justify-between">
             <!-- Hamburger Button (Visible on small screens) -->
             <button class="text-white text-3xl md:hidden" onclick="toggleMenu()">☰</button>
@@ -123,17 +123,22 @@
             const modal = document.getElementById('imageModal');
             const modalImage = document.getElementById('modalImage');
             const footer = document.getElementById('footer');
+            const navbar = document.getElementById('navbar'); // New line
             modalImage.src = imageSrc;
             modal.classList.remove('hidden');
-            footer.classList.add('hidden'); // Hide the footer
+            footer.classList.add('hidden');
+            navbar.classList.add('hidden'); // Hide navbar
         }
-    
+        
         function closeModal() {
             const modal = document.getElementById('imageModal');
             const footer = document.getElementById('footer');
+            const navbar = document.getElementById('navbar'); // New line
             modal.classList.add('hidden');
-            footer.classList.remove('hidden'); // Show the footer
+            footer.classList.remove('hidden');
+            navbar.classList.remove('hidden'); // Show navbar
         }
+        
     
         function closeModalOnBackground(event) {
             const modalImage = document.getElementById('modalImage');
