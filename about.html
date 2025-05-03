@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel ="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white font-[Nunito] text-weight-normal bg-[url('imgs/flower_background.png')] bg-cover bg-center bg-fixed">
+    <!-- Navbar with solid background -->
+    <div class="bg-gray-800 border-b border-white">
+        <nav class="w-full p-7 flex items-center justify-between">
+            <!-- Hamburger Button (Visible on small screens) -->
+            <button class="text-white text-3xl md:hidden" onclick="toggleMenu()">☰</button>
+            
+            <!-- Navigation Links -->
+            <ul id="navbarMenu" class="hidden flex-col md:flex md:flex-row md:space-x-8 space-y-4 md:space-y-0 bg-gray-800 md:bg-transparent p-5 md:p-0 absolute md:static top-16 left-0 w-full md:w-auto z-10">
+                <li><a href="index.html" class="text-2xl md:text-3xl font-bold text-white hover:text-gray-400 border-2 border-gray-900 rounded-xl p-2 bg-gray-900">Home</a></li>
+                <li><a href="projects.html" class="text-2xl md:text-3xl font-bold text-white hover:text-gray-400 border-2 border-gray-900 rounded-xl p-2 bg-gray-900">Projects</a></li>
+                <li><a href="contacts.html" class="text-2xl md:text-3xl font-bold text-white hover:text-gray-400 border-2 border-gray-900 rounded-xl p-2 bg-gray-900">Contacts</a></li>
+                <li><a href="#" class="text-yellow-400 text-2xl md:text-3xl font-bold text-white hover:text-gray-400 border-2 border-gray-900 rounded-xl p-2 bg-gray-900">About</a></li>
+            </ul>
+            
+            <!-- Right side: Portfolio link (Visible on medium screens and above) -->
+            <a href="#" class="hidden md:block text-4xl text-white font-bold border-2 border-gray-900 rounded-xl p-2 bg-gray-900">My Profile</a>
+        </nav>
+    </div>
+    
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navbarMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+    <!-- Main content -->
+    <div class="container mx-auto flex flex-col items-center min-h-screen p-10">
+        <!-- About Me Section -->
+        <div class="bg-gray-800 p-10 rounded-lg border border-yellow-400 shadow-lg max-w-4xl w-full mb-10">
+            <h2 class="text-3xl font-bold mb-6 text-center" style="color: #E3D2C3;">About Me</h2>
+            <p class="text-lg text-gray-300 leading-relaxed">
+                Hello! My name is <span class="text-yellow-400 font-bold">James Edward L. Verceles</span>. I am an aspiring software developer and a Computer Science student at Perpetual Molino Campus. I am passionate about coding, learning new technologies, and building projects that solve real-world problems. I enjoy exploring different programming languages and frameworks to expand my skill set.
+            </p>
+        </div>
+    
+        <!-- Certificates Section -->
+        <div class="bg-gray-800 p-10 rounded-lg border border-yellow-400 shadow-lg max-w-4xl w-full mb-10">
+            <h2 class="text-3xl font-bold mb-6 text-center" style="color: #E3D2C3;">Certificates</h2>
+            <div class="grid grid-cols-2 gap-6">
+                <div class="flex items-center space-x-4">
+                    <!-- Clickable Image -->
+                    <img src="imgs/certificates/cyberSecurity.png" alt="Cyber Security Essentials" class="w-40 h-16 rounded-lg border border-gray-700 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('imgs/certificates/cyberSecurity.png')">
+                    <p class="text-lg text-gray-300">
+                        <span class="text-yellow-400 font-bold">Cyber Security Essentials</span> – Completed a course on CyberSecurity essentials.
+                    </p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- Clickable Image -->
+                    <img src="imgs/certificates/it-specialist-python.png" alt="Python Essentials" class="w-16 h-16 rounded-lg border border-gray-700 hover:scale-105 transition-transform cursor-pointer" onclick="openModal('imgs/certificates/it-specialist-python.png')">
+                    <p class="text-lg text-gray-300">
+                        <span class="text-yellow-400 font-bold">Python Specialist</span> – Gained proficiency in Python programming.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal -->
+        <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden" onclick="closeModalOnBackground(event)">
+            <div class="relative">
+                <img id="modalImage" src="" alt="Certificate" class="max-w-full max-h-screen rounded-lg">
+                <button class="absolute top-2 right-2 text-white text-2xl font-bold" onclick="closeModal()">×</button>
+            </div>
+        </div>
+    
+        <!-- Education Section -->
+        <div class="bg-gray-800 p-10 rounded-lg border border-yellow-400 shadow-lg max-w-4xl w-full mb-10">
+            <h2 class="text-3xl font-bold mb-6 text-center" style="color: #E3D2C3;">Education</h2>
+            <ul class="list-disc list-inside text-gray-300 space-y-4">
+                <li class="text-lg">
+                    <span class="text-yellow-400 font-bold">Bachelor of Science in Computer Science</span> – University of Perpetual Help Molino Campus (2020 - Present)
+                </li>
+                <li class="text-lg">
+                    <span class="text-yellow-400 font-bold">Senior High School - STEM Strand</span> – University of Perpetual Help Molino Campus (2018 - 2020)
+                </li>
+                <li class="text-lg">
+                    <span class="text-yellow-400 font-bold">High School Diploma</span> – Saint Francis Institute Learning & Business High School Inc. (2013 - 2018)
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Hobbies Section -->
+        <div class="bg-gray-800 p-10 rounded-lg border border-yellow-400 shadow-lg max-w-4xl w-full">
+            <h2 class="text-3xl font-bold mb-6 text-center" style="color: #E3D2C3;">Hobbies</h2>
+            <ul class="list-disc list-inside text-gray-300 space-y-4">
+                <li class="text-lg">
+                    <span class="text-yellow-400 font-bold">Coding</span> – I enjoy solving problems and building projects using various programming languages and frameworks.
+                </li>
+                <li class="text-lg">
+                    <span class="text-yellow-400 font-bold">Gaming</span> – I love playing strategy and role-playing games to relax and improve critical thinking.
+                </li>
+                <li class="text-lg">
+                    <span class="text-yellow-400 font-bold">Reading</span> – I enjoy reading books and articles about technology, science, and personal development.
+                </li>
+                <li class="text-lg">
+                    <span class="text-yellow-400 font-bold">Photography</span> – Capturing moments and experimenting with creative photography techniques is a passion of mine.
+                </li>
+                <li class="text-lg">
+                    <span class="text-yellow-400 font-bold">Music</span> – Listening to and exploring different genres of music helps me stay inspired and focused.
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    <footer id="footer" class="bg-gray-800 border-t border-white p-5 text-center inset-x-0 bottom-0">
+        <p class="text-white">© 2025 James Edward L. Verceles. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const footer = document.getElementById('footer');
+            modalImage.src = imageSrc;
+            modal.classList.remove('hidden');
+            footer.classList.add('hidden'); // Hide the footer
+        }
+    
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            const footer = document.getElementById('footer');
+            modal.classList.add('hidden');
+            footer.classList.remove('hidden'); // Show the footer
+        }
+    
+        function closeModalOnBackground(event) {
+            const modalImage = document.getElementById('modalImage');
+            if (!modalImage.contains(event.target)) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
